@@ -2,7 +2,7 @@
 
 *Movies* is the bridge between IMDb's unofficial API; [imdbapi.com](http://imdbapi.com/) and Ruby.
 
-Follow me on [Twitter](http://twitter.com/linusoleander) for more info and updates.
+Follow me on [Twitter](http://twitter.com/linusoleander) or [Github](https://github.com/oleander/) for more info and updates.
 
 ## How to use
 
