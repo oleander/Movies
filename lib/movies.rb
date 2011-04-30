@@ -1,6 +1,7 @@
 require "json"
 require "rest-client"
 require "date"
+require "yaml"
 
 class Movies
   attr_reader :title, :year, :rated, :released, :plot, :genres, :director, :writers, :actors, :poster, :runtime, :rating, :votes, :id
@@ -9,6 +10,7 @@ class Movies
       raise ArgumentError.new("Passing the callback option makes not sense.")
     end
     @url = "#{url}&#{(@params = params).map{|key, value| "#{key}=#{value}"}.join("&")}"
+    @exclude = YAML.load_file("#{File.dirname(__FILE__)}/movies/exclude.yml")["excluded"]
   end
 
   def self.find_by_id(id, params = {})
