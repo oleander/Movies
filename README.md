@@ -18,6 +18,12 @@ Movies.find_by_title("The dark night")
 Movies.find_by_id("tt0337978")
 ````
 
+### Find by release name
+
+```` ruby
+Movies.find_by_release_name("Heartbreaker 2010 LIMITED DVDRip XviD-SUBMERGE")
+````
+
 ## Params to pass
 
 You can pass arguments if you for example want to search for a particular year.

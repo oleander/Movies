@@ -10,7 +10,6 @@ class Movies
       raise ArgumentError.new("Passing the callback option makes not sense.")
     end
     @url = "#{url}&#{(@params = params).map{|key, value| "#{key}=#{value}"}.join("&")}"
-    @exclude = YAML.load_file("#{File.dirname(__FILE__)}/movies/exclude.yml")["excluded"]
   end
 
   def self.find_by_id(id, params = {})
@@ -27,6 +26,14 @@ class Movies
     Movies.new("http://www.imdbapi.com/?t=#{URI.encode(title)}", params).prepare
   end
   
+  def self.find_by_release_name(title, params)
+    if title.nil? or title.empty?
+      raise ArgumentError.new("Title can not be blank.")
+    end
+    
+    params.merge!(y: $1) if title =~ /(19|20\d{2})/
+    Movies.new("http://www.imdbapi.com/?t=#{URI.encode(Movies.cleaner(title))}", params).prepare
+  end
   
   def prepare
     tap do
@@ -75,6 +82,22 @@ class Movies
   
   def href
     "http://www.imdb.com/title/#{@id}/"
+  end
+  
+  def self.excluded
+    @_excluded ||= YAML.load_file("#{File.dirname(__FILE__)}/movies/exclude.yml")["excluded"]
+  end
+  
+  def self.cleaner(string)
+    excluded.each do |clean|
+      string = string.gsub(/#{clean}/i, ' ')
+    end
+
+    [/(19|20\d{2})/, /\./, /\s*-\s*/, /\s{2,}/].each do |regex|
+      string = string.gsub(regex, ' ')
+    end
+
+    string.strip
   end
   
   private
