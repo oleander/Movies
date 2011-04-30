@@ -72,6 +72,7 @@ These accessors are available for the object that is being returned from `find_b
 - **released** (*Date*) Release date.
 - **writers** (*Array < String >*) Writers.
 - **actors** (*Array < String>*) Actors.
+- **director** (*String*) Name of director.
 - **rating** (*Float*) Rating from 1.0 to 10.0.
 - **votes** (*Float*) Number of votes.
 - **runtime** (*Fixnum*) Run time in seconds.

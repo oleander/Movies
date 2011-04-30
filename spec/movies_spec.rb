@@ -85,6 +85,7 @@ describe Movies do
       movie.rating.should eq(8.1)
       movie.votes.should eq(109863)
       movie.id.should eq("tt1285016")
+      movie.director.should eq("David Fincher")
       movie.href.should eq("http://www.imdb.com/title/tt1285016/")
     end
   end
