@@ -50,9 +50,16 @@ class Movies
       @rating   = @rating.to_f
       @votes    = @votes.to_i
       
-      if not @released.to_s.empty? and not @released == "N/A"
-        @released = Date.parse(@released)
-      else
+      begin
+        if not @released.to_s.empty? and not @released == "N/A"
+          @released = Date.parse(@released)
+        else
+          @released = nil
+        end
+      rescue => error
+        puts "--------------------------------------------------------"
+        puts "Error: #{error.inspect}, Url: #{@url}, Value: #{@released}"
+        puts "--------------------------------------------------------"
         @released = nil
       end
       
