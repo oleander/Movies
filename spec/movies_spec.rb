@@ -101,6 +101,15 @@ describe Movies do
     end
   end
   
+  context "not_found" do
+    use_vcr_cassette "not_found"
+   it "should be set to not found" do
+      Movies.new("http://www.imdbapi.com/?i=ttrandom").prepare.should_not be_found
+
+      a_request(:get, "http://www.imdbapi.com/?i=ttrandom").should have_been_made.once
+    end
+  end
+  
   context "tomatoes" do
     use_vcr_cassette "tt0337978"
     

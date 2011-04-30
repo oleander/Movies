@@ -79,6 +79,7 @@ These accessors are available for the object that is being returned from `find_b
 - **href** (*String*) IMDb url.
 - **id** (*String*) IMDb id.
 - **poster** (*String*) Url to poster.
+- **found?** (*Boolean*) Was anything found?
 
 ## How to install
 

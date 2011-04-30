@@ -64,6 +64,10 @@ class Movies
     end
   end
   
+  def found?
+    content["Response"] == "True"
+  end
+  
   def tomato
     unless @params[:tomatoes]
       raise ArgumentError.new("You have to set 'tomatoes' to true to get this data.")
