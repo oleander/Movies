@@ -4,7 +4,8 @@ require "date"
 require "yaml"
 
 class Movies
-  attr_reader :title, :year, :rated, :released, :plot, :genres, :director, :writers, :actors, :poster, :runtime, :rating, :votes, :id
+  attr_reader :title, :year, :rated, :plot, :genres, :director, :writers, :actors, :poster, :runtime, :rating, :votes, :id
+  
   def initialize(url, params = {})
     if params.keys.include?(:callback)
       raise ArgumentError.new("Passing the callback option makes not sense.")
@@ -37,31 +38,18 @@ class Movies
   
   def prepare
     tap do
-      return self unless content["Response"] == "True"
+      return self unless found?
       
       content.keys.each do |name| 
         instance_variable_set "@" + name.to_s.downcase, content[name] 
       end
       
-      @year     = @year.to_i
-      @genres   = @genre.split(",")
-      @writers  = @writer.split(",")
-      @actors   = @actors.split(", ")
-      @rating   = @rating.to_f
-      @votes    = @votes.to_i
-      
-      begin
-        if not @released.to_s.empty? and not @released == "N/A"
-          @released = Date.parse(@released)
-        else
-          @released = nil
-        end
-      rescue => error
-        puts "--------------------------------------------------------"
-        puts "Error: #{error.inspect}, Url: #{@url}, Value: #{@released}"
-        puts "--------------------------------------------------------"
-        @released = nil
-      end
+      @year    = @year.to_i
+      @genres  = @genre.split(",")
+      @writers = @writer.split(",")
+      @actors  = @actors.split(", ")
+      @rating  = @rating.to_f
+      @votes   = @votes.to_i
       
       if @runtime =~ /(\d+).+?(\d+)/
         @runtime = $1.to_i * 60 + $1.to_i
@@ -76,12 +64,19 @@ class Movies
   def found?
     content["Response"] == "True"
   end
+
+  def released
+    Date.parse(@released)
+  rescue ArgumentError
+    return nil
+  end
   
   def tomato
     unless @params[:tomatoes]
       raise ArgumentError.new("You have to set 'tomatoes' to true to get this data.")
     end
-    Struct.new(
+    
+    @_tomato ||= Struct.new(
       :meter, 
       :image,
       :rating,
