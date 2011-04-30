@@ -66,7 +66,7 @@ movie.tomato.rotten
 
 ## Data to work with
 
-These accessors are available for the object that is being returned from `find_by_*`
+These accessors are available for the object that is being returned from `find_by_*`.
 
 - **year** (*Fixnum*) Year of the movie.
 - **released** (*Date*) Release date.
