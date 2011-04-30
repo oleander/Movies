@@ -42,12 +42,15 @@ class Movies
       end
       
       @year     = @year.to_i
-      @released = Date.parse(@released)
       @genres   = @genre.split(",")
       @writers  = @writer.split(",")
       @actors   = @actors.split(", ")
       @rating   = @rating.to_f
       @votes    = @votes.to_i
+      
+      if @released and not @released.empty?
+        @released = Date.parse(@released)
+      end
       
       if @runtime =~ /(\d+).+?(\d+)/
         @runtime = $1.to_i * 60 + $1.to_i
