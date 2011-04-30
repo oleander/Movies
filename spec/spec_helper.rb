@@ -13,7 +13,7 @@ VCR.config do |c|
   c.cassette_library_dir = "spec/fixtures/vcr_cassettes"
   c.stub_with :webmock
   c.default_cassette_options = {
-    record: :all
+    record: :none
   }
   c.allow_http_connections_when_no_cassette = false
 end
