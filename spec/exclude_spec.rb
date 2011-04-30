@@ -140,4 +140,12 @@ describe "exclude.yaml" do
   it "should remove TV related data" do
     Movies.cleaner("Bones S06E19 HDTV XviD-LOL").should_not match(/s06e19/i)
   end
+  
+  it "should not contain 'R5'" do
+    Movies.cleaner("Just Go With It R5 LiNE XviD-Rx").should_not match(/r5/i)
+  end
+  
+  it "should not contain 'R6'" do
+    Movies.cleaner("Just Go With It R6 LiNE XviD-Rx").should_not match(/r6/i)
+  end
 end

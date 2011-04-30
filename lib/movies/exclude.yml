@@ -24,3 +24,4 @@ excluded:
   - NTSC
   - PAL
   - "S\d{1,2}E\d{1,2}"
+  - "R[4|5|6]"
