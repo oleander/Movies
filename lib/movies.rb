@@ -52,14 +52,14 @@ class Movies
       end
       
       @year    = @year.to_i
-      @genres  = @genre.split(",")
-      @writers = @writer.split(",")
+      @genres  = @genre.split(", ")
+      @writers = @writer.split(", ")
       @actors  = @actors.split(", ")
       @rating  = @rating.to_f
       @votes   = @votes.to_i
       
       if @runtime =~ /(\d+).+?(\d+)/
-        @runtime = $1.to_i * 60 + $1.to_i
+        @runtime = $1.to_i * 60 + $2.to_i
       elsif @runtime =~ /(\d+) hrs/
         @runtime = $1.to_i * 60
       else

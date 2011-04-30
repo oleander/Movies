@@ -2,7 +2,7 @@
 - !ruby/struct:VCR::HTTPInteraction 
   request: !ruby/struct:VCR::Request 
     method: :get
-    uri: http://www.imdbapi.com:80/?t=Consinsual&y=2010
+    uri: http://www.imdbapi.com:80/?i=tt0058371
     body: 
     headers: 
       accept: 
@@ -35,20 +35,22 @@
       x-powered-by: 
       - ASP.NET
       date: 
-      - Sat, 30 Apr 2011 23:20:15 GMT
+      - Sat, 30 Apr 2011 23:20:16 GMT
       content-length: 
-      - "469"
+      - "573"
     body: !binary |
       H4sIAAAAAAAEAO29B2AcSZYlJi9tynt/SvVK1+B0oQiAYBMk2JBAEOzBiM3m
       kuwdaUcjKasqgcplVmVdZhZAzO2dvPfee++999577733ujudTif33/8/XGZk
-      AWz2zkrayZ4hgKrIHz9+fB8/In7xR2+Ktsw/evTRSbVsimWzzsqPRh/9PnlW
-      02d7O7s79NerrM1n9Ocr/J6Xedbwny/uHtMHn+fLGu8/rbNFRn8/Lep82lZ4
-      /WW2LtOn4/Tb2XKZzem779ZFm0e/OcYrDX3ze+X5Mkuf5fXFuqmWo/R1kb3N
-      0i+ypsl+0boqRunvlbXz+nqZvsmuy6oepcdl/q5o0p8qJlVZNATqZVm1BOg4
-      nVbrVZmnV/MqbfJ80aRtlc6zyzwt2jQry3S1buY5fTrPi5pavEvL4jxHI/ok
-      zWcX+Th9Q781hNl1epG3TVosCf32qljmMwKbL9NsmVblLD0vs0U+Sid5W2fX
-      WTlKy3VDfSxn6Syf5tRdjhcZ7qqYtus6HwPRqqFPCVUh5Kv1si0WIOVuOq/T
-      e/fSBc0HvsjaYnmBz8f79OdPVm0OSu3doz/OntJvbbv7YGf//oMD+uBV3qxo
-      JgHmTb3OP/ol/w80fcQQ4gEAAA==
+      AWz2zkrayZ4hgKrIHz9+fB8/In7xR2+Ktsw/evTRm3meflFVy+3Xq2K5zOvm
+      o9FHv0+e1fTV7sNP9+mvV1mbz+jPz/F7XuZZw38epN9Zl6m2+Txf1oD2LFsU
+      5fUo/eK6afOafnlVLbLlNKcmT4s6n7YVAH8nW+RN+iIvyqZa0lffrQtqTV98
+      UUznWV6mT6+XOQHJ6uv0dZtfZXVLrY7xdkOtvp1dl/l1+kVRls0oPS2L9LtZ
+      WWbT+Sh9WZUZAb6oC/o9J6DpF9NTGtU1vf+yrFp6+/ep1suL9HR5URbNPL0o
+      6jJ9Ubx9e51my1k6pzey9bJNs7ouLvM0a9O2S6BRmqXzqiU0q2V6UlMvo7St
+      6MMybxpqni3TfNnO102RNW0xTa/yclot8vF4DCQqEIbQmLft6tHdu0U2XuSz
+      ItsuFrPJmNrdLRbZRd7c/eLuFz95/8kXby72v/jpsx/Q//dePKO/y/tPsuWT
+      5e/99ln7U2+mV18+ne5/+ebi3Rc/8Xv+nuPf/yd3x7//69/73t7O+KdXF9TZ
+      KxpJscC87KbzOr1/kC6KJSaYprRYXtDnn44f0J8/SaMBYQ8e3KO/zp7Sr227
+      s3P/4N6DXfrgVd6sqmUDOG/qdf7RL/l/ALTFvcI+AgAA
 
     http_version: "1.1"

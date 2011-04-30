@@ -87,25 +87,41 @@ describe Movies do
       movie.id.should eq("tt1285016")
       movie.director.should eq("David Fincher")
       movie.href.should eq("http://www.imdb.com/title/tt1285016/")
+      
+      movie.genres.each do |genre|
+        genre.should eq(genre.strip)
+      end
+      
+      movie.actors.each do |actor|
+        actor.should eq(actor.strip)
+      end
+      
+      movie.writers.each do |writer|
+        writer.should eq(writer.strip)
+      end
     end
   end
   
   context "tt0066026" do
     use_vcr_cassette "tt0066026"
-   it "should be possible to pass params" do
+    it "should be possible to pass params" do
       Movies.new("http://www.imdbapi.com/?i=tt0066026", {
         y: "1970"
       }).prepare
-
+    end
+    
+    after(:each) do
       a_request(:get, "http://www.imdbapi.com/?i=tt0066026&y=1970").should have_been_made.once
     end
   end
   
   context "not_found" do
     use_vcr_cassette "not_found"
-   it "should be set to not found" do
+    it "should be set to not found" do
       Movies.new("http://www.imdbapi.com/?i=ttrandom").prepare.should_not be_found
-
+    end
+    
+    after(:each) do
       a_request(:get, "http://www.imdbapi.com/?i=ttrandom").should have_been_made.once
     end
   end
@@ -116,6 +132,9 @@ describe Movies do
       lambda { 
         Movies.new("http://www.imdbapi.com/?t=Consinsual&y=2010").prepare.released.should be_nil 
       }.should_not raise_error
+    end
+    
+    after(:each) do
       a_request(:get, "http://www.imdbapi.com/?t=Consinsual&y=2010").should have_been_made.once
     end
   end
@@ -126,7 +145,21 @@ describe Movies do
       lambda { 
         Movies.new("http://www.imdbapi.com/?i=tt0988120").prepare.released.should be_nil 
       }.should_not raise_error
+    end
+    
+    after(:each) do
       a_request(:get, "http://www.imdbapi.com/?i=tt0988120").should have_been_made.once
+    end
+  end
+  
+  context "bug3" do
+    use_vcr_cassette "bug3"
+    it "should contain the correct length" do
+      Movies.new("http://www.imdbapi.com/?i=tt0058371").prepare.runtime.should eq(118)
+    end
+    
+    after(:each) do
+      a_request(:get, "http://www.imdbapi.com/?i=tt0058371").should have_been_made.once
     end
   end
   
