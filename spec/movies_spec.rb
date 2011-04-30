@@ -7,7 +7,7 @@ describe "subject" do
       ["aa123", "tt123", "123", nil, ""].each do |id|
         lambda { 
           Movies.find_by_id(id) 
-        }.should raise_error(ArgumentError, "The id is not valid")
+        }.should raise_error(ArgumentError, "The id is not valid.")
       end
     end
   end
@@ -17,9 +17,17 @@ describe "subject" do
       [nil, ""].each do |title|
         lambda { 
           Movies.find_by_title(title) 
-        }.should raise_error(ArgumentError, "Title can not be blank")
+        }.should raise_error(ArgumentError, "Title can not be blank.")
       end
     end
+  end
+  
+  it "should not be possible to pass the callback option" do
+    lambda {
+      Movies.new("http://www.imdbapi.com/?i=tt1285016", {
+        callback: "random"
+      })
+    }.should raise_error(ArgumentError, "Passing the callback option makes not sense.")
   end
   
   context "tt1285016" do
@@ -55,6 +63,29 @@ describe "subject" do
       }).prepare
 
       a_request(:get, "http://www.imdbapi.com/?i=tt0066026&y=1970").should have_been_made.once
+    end
+  end
+  
+  context "tomatoes" do
+    use_vcr_cassette "tt0337978"
+    
+    it "should be possible to fetch tomatoes specific data" do
+      movie = Movies.new("http://www.imdbapi.com/?i=tt0337978", {
+        tomatoes: "true"
+      }).prepare
+
+      movie.tomato.meter.should eq(82)
+      movie.tomato.image.should eq("certified")
+      movie.tomato.rating.should eq(6.8)
+      movie.tomato.reviews.should eq(198)
+      movie.tomato.fresh.should eq(162)
+      movie.tomato.rotten.should eq(36)
+    end
+    
+    it "should raise an error if trying to fetch tomato data without passing the tomato option" do
+      lambda {
+        Movies.new("http://www.imdbapi.com/?i=tt0337978").prepare.tomato
+      }.should raise_error(ArgumentError, "You have to set 'tomatoes' to true to get this data.")
     end
   end
 end

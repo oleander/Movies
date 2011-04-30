@@ -5,19 +5,22 @@ require "date"
 class Movies
   attr_reader :title, :year, :rated, :released, :plot, :genres, :director, :writers, :actors, :poster, :runtime, :rating, :votes, :id
   def initialize(url, params = {})
-    @url = "#{url}&#{params.map{|key, value| "#{key}=#{value}"}.join("&")}"
+    if params.keys.include?(:callback)
+      raise ArgumentError.new("Passing the callback option makes not sense.")
+    end
+    @url = "#{url}&#{(@params = params).map{|key, value| "#{key}=#{value}"}.join("&")}"
   end
 
   def self.find_by_id(id, params = {})
     unless id.to_s.match(/tt\d{4,}/)
-      raise ArgumentError.new("The id is not valid")
+      raise ArgumentError.new("The id is not valid.")
     end
     Movies.new("http://www.imdbapi.com/?i=#{id}", params).prepare
   end
   
   def self.find_by_title(title, params = {})
     if title.nil? or title.empty?
-      raise ArgumentError.new("Title can not be blank")
+      raise ArgumentError.new("Title can not be blank.")
     end
     Movies.new("http://www.imdbapi.com/?t=#{URI.encode(title)}", params).prepare
   end
@@ -45,6 +48,27 @@ class Movies
         @runtime = 0
       end 
     end
+  end
+  
+  def tomato
+    unless @params[:tomatoes]
+      raise ArgumentError.new("You have to set 'tomatoes' to true to get this data.")
+    end
+    Struct.new(
+      :meter, 
+      :image,
+      :rating,
+      :reviews,
+      :fresh,
+      :rotten
+    ).new(
+      @tomatometer.to_i, 
+      @tomatoimage,
+      @tomatorating.to_f,
+      @tomatoreviews.to_i,
+      @tomatofresh.to_i,
+      @tomatorotten.to_i
+    )
   end
   
   def href
