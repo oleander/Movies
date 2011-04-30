@@ -1,11 +1,24 @@
 require "spec_helper"
 
 describe "subject" do
-  it "should raise an error if wrong params is being passed" do
-    ["aa123", "tt123", "123", nil, ""].each do |id|
-      lambda { 
-        Movies.find_by_id(id) 
-      }.should raise_error(ArgumentError, "The id is not valid")
+  
+  context "#find_by_id" do
+    it "should raise an error if wrong params is being passed" do
+      ["aa123", "tt123", "123", nil, ""].each do |id|
+        lambda { 
+          Movies.find_by_id(id) 
+        }.should raise_error(ArgumentError, "The id is not valid")
+      end
+    end
+  end
+  
+  context "#find_by_title" do
+    it "should raise an error if wrong params is being passed" do
+      [nil, ""].each do |title|
+        lambda { 
+          Movies.find_by_title(title) 
+        }.should raise_error(ArgumentError, "Title can not be blank")
+      end
     end
   end
   

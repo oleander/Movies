@@ -9,13 +9,17 @@ class Movies
   end
 
   def self.find_by_id(id, params = {})
-    raise ArgumentError.new("The id is not valid") unless id.to_s.match(/tt\d{4,}/)
-    Movies.new("http://www.imdbapi.com/?i=#{id}").prepare
+    unless id.to_s.match(/tt\d{4,}/)
+      raise ArgumentError.new("The id is not valid")
+    end
+    Movies.new("http://www.imdbapi.com/?i=#{id}", params).prepare
   end
   
   def self.find_by_title(title, params = {})
-    # raise ArgumentError.new("The id is not valid") unless id.to_s.match(/tt\d{4,}/)
-    # Movies.new("http://www.imdbapi.com/?i=#{id}").prepare
+    if title.nil? or title.empty?
+      raise ArgumentError.new("Title can not be blank")
+    end
+    Movies.new("http://www.imdbapi.com/?t=#{URI.encode(title)}", params).prepare
   end
   
   
