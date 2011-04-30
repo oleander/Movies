@@ -20,3 +20,5 @@ excluded:
   - SCR
   - "((ac3(-[a-z]+)?))"
   - LIMITED
+  - SWESUB
+  - AC3

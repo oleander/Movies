@@ -64,7 +64,7 @@
       accept-encoding: 
       - gzip, deflate
       timeout: 
-      - "10"
+      - "3"
   response: !ruby/struct:VCR::Response 
     status: !ruby/struct:VCR::ResponseStatus 
       code: 200
@@ -89,7 +89,7 @@
       x-powered-by: 
       - ASP.NET
       date: 
-      - Sat, 30 Apr 2011 03:37:29 GMT
+      - Sat, 30 Apr 2011 14:02:17 GMT
       content-length: 
       - "540"
     body: !binary |

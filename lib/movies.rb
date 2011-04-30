@@ -41,7 +41,7 @@ class Movies
       return self unless found?
       
       content.keys.each do |name| 
-        instance_variable_set "@" + name.to_s.downcase, content[name] 
+        instance_variable_set "@" + name.to_s.downcase, (content[name] == "N/A" ? nil : content[name])
       end
       
       @year    = @year.to_i
@@ -67,7 +67,7 @@ class Movies
 
   def released
     Date.parse(@released)
-  rescue ArgumentError
+  rescue
     return nil
   end
   
