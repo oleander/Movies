@@ -14,11 +14,12 @@ excluded:
   - workprint
   - brrip|bluray|blu(-?)ray
   - dvd(-?)r
-  - x264
+  - (.+-)?x264(-.+)?
   - UNRATED
   - IMAGiNE
   - SCR
   - "((ac3(-[a-z]+)?))"
   - LIMITED
-  - SWESUB
-  - AC3
+  - (.+)?SUB
+  - NTSC
+  - PAL
