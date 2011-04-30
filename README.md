@@ -77,6 +77,7 @@ These accessors are available for the object that is being returned from `find_b
 - **runtime** (*Fixnum*) Run time in seconds.
 - **href** (*String*) IMDb url.
 - **id** (*String*) IMDb id.
+- **poster** (*String*) Url to poster.
 
 ## How to install
 
