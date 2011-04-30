@@ -50,8 +50,12 @@ class Movies
       @rating   = @rating.to_f
       @votes    = @votes.to_i
       
-      if @released and not @released.empty?
-        @released = Date.parse(@released)
+      begin
+        if @released and not @released.empty?
+          @released = Date.parse(@released)
+        end
+      rescue => error
+        puts "Error: #{error}, Url: #{@url}"
       end
       
       if @runtime =~ /(\d+).+?(\d+)/
