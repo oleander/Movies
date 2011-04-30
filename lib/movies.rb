@@ -10,7 +10,14 @@ class Movies
     if params.keys.include?(:callback)
       raise ArgumentError.new("Passing the callback option makes not sense.")
     end
-    @url = "#{url}&#{(@params = params).map{|key, value| "#{key}=#{value}"}.join("&")}"
+    
+    @params = params
+    
+    if params.empty?
+      @url = url
+    else
+      @url = "#{url}&#{(@params).map{|key, value| "#{key}=#{value}"}.join("&")}"
+    end
   end
 
   def self.find_by_id(id, params = {})
