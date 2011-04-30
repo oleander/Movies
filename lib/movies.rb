@@ -48,7 +48,7 @@ class Movies
       return self unless found?
       
       content.keys.each do |name| 
-        instance_variable_set "@" + name.to_s.downcase, (content[name] == "N/A" ? nil : content[name])
+        instance_variable_set "@" + name.to_s.downcase, (content[name] == "N/A" ? "" : content[name])
       end
       
       @year    = @year.to_i

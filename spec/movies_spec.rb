@@ -120,14 +120,24 @@ describe Movies do
     end
   end
   
+  context "bug2" do
+    use_vcr_cassette "bug2"
+    it "should not raise an error when date is invalid" do
+      lambda { 
+        Movies.new("http://www.imdbapi.com/?i=tt0988120").prepare.released.should be_nil 
+      }.should_not raise_error
+      a_request(:get, "http://www.imdbapi.com/?i=tt0988120").should have_been_made.once
+    end
+  end
+  
   context "N/A" do
     use_vcr_cassette "n-a-tt1570337"
     it "Fields that contains N/A should be nil or zero" do
       movie = Movies.new("http://www.imdbapi.com/?i=tt1570337").prepare
       
       movie.runtime.should eq(0)
-      movie.plot.should be_nil
-      movie.rated.should be_nil
+      movie.plot.should be_empty
+      movie.rated.should be_empty
       
       a_request(:get, "http://www.imdbapi.com/?i=tt1570337").should have_been_made.once
     end
