@@ -109,14 +109,20 @@ class Movies
   end
   
   def self.cleaner(string)
-    excluded.each do |clean|
-      string = string.gsub(/#{clean}/i, ' ')
-    end
-
-    [/((19|20)\d{2})/, /\./, /\s*-\s*/, /\s{2,}/].each do |regex|
+    b = string
+    
+    [/((19|20)\d{2}).*$/, /\./, /\s*-\s*/, /\s{2,}/].each do |regex|
       string = string.gsub(regex, ' ')
     end
+    
+    excluded.each do |clean|
+      string = string.gsub(/#{clean}.*$/i, ' ')
+    end
 
+    require "colorize"
+    puts "Before: #{b}"
+    puts "After: #{string.strip}"
+    puts "------------------------"
     string.strip
   end
   

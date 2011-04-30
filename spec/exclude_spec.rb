@@ -114,11 +114,11 @@ describe "exclude.yaml" do
   end
   
   it "should not contain 'PAL'" do
-    Movies.cleaner("1942 PAL VC Arcade Wii-LaKiTu").should_not match(/pal/i)
+    Movies.cleaner("Sex And The City 2 2010 SUB PAL DVDRip XviD AC3-Rx").should_not match(/pal/i)
   end
   
   it "should not contain a year" do
-    Movies.cleaner("1942 PAL VC Arcade Wii-LaKiTu").should_not match(/1942/)
+    Movies.cleaner("VC Arcade 1942 Wii-LaKiTu").should_not match(/1942/)
   end
   
   it "should not contain dots" do
@@ -135,5 +135,9 @@ describe "exclude.yaml" do
   
   it "should strip ingoing params" do
     Movies.cleaner(" A B ").should eq("A B")
+  end
+  
+  it "should remove TV related data" do
+    Movies.cleaner("Bones S06E19 HDTV XviD-LOL").should_not match(/s06e19/i)
   end
 end
