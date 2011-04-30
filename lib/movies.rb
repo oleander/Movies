@@ -119,6 +119,6 @@ class Movies
     end
 
     def download
-      @_download ||= RestClient.get(@url, timeout: 10)
+      @_download ||= RestClient.get(@url, timeout: 3)
     end
 end
