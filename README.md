@@ -1,6 +1,6 @@
 # Movies
 
-*Movies* is the bridge between IMDb's Unofficial API; [IMDb API](http://imdbapi.com/) and Ruby.
+*Movies* is the bridge between IMDb's unofficial API; [imdbapi.com](http://imdbapi.com/) and Ruby.
 
 Follow me on [Twitter](http://twitter.com/linusoleander) for more info and updates.
 
@@ -20,13 +20,24 @@ Movies.find_by_id("tt0337978")
 
 ### Find by release name
 
+This method will try to filter out as much irrelevant data as possible using [this exclude list](https://github.com/oleander/Movies/blob/master/lib/movies/exclude.yml), before doing a request to the server.
+It will also try to find a release year in the title, which will be passed to [imdbapi.com](http://imdbapi.com/).
+
 ```` ruby
 Movies.find_by_release_name("Heartbreaker.2010.LIMITED.DVDRip.XviD-SUBMERGE")
 ````
 
-## Params to pass
+The *snippet* above will pass the following data to the server.
 
-You can pass arguments if you for example want to search for a particular year.
+```` ruby
+Movies.find_by_title("Heartbreaker", {
+  y: "2010"
+})
+````
+
+## Settings
+
+You can pass some arguments if you for example want to search for a particular year.
 
 ```` ruby
 Movies.find_by_title("The dark night", {
@@ -41,9 +52,6 @@ These params are supported.
 - **tomatoes** (*Boolean*) Adds rotten tomatoes data.
 
 ## Rottentomatoes
-
-If you pass the `tomatoes` param then this accessors will be available for you.
-
 
 ```` ruby
 movie = Movies.find_by_title("Die Hard 4.0", {
@@ -66,7 +74,7 @@ movie.tomato.rotten
 
 ## Data to work with
 
-These accessors are available for the object that is being returned from `find_by_*`.
+These accessors are available for the object that is being returned from the `find_by_*` methods.
 
 - **year** (*Fixnum*) Year of the movie.
 - **released** (*Date*) Release date.

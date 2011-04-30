@@ -8,8 +8,8 @@ Gem::Specification.new do |s|
   s.authors     = ["Linus Oleander"]
   s.email       = ["linus@oleander.nu"]
   s.homepage    = "https://github.com/oleander/Movies"
-  s.summary     = %q{Unofficial API for IMDb.com}
-  s.description = %q{Unofficial API for IMDb.com.}
+  s.summary     = %q{Movies is the bridge between IMDb's unofficial API; imdbapi.com and Ruby.}
+  s.description = %q{Movies is the bridge between IMDb's unofficial API; imdbapi.com and Ruby}
 
   s.rubyforge_project = "movies"
 
