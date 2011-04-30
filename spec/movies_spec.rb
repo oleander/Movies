@@ -110,6 +110,16 @@ describe Movies do
     end
   end
   
+  context "bug1" do
+    use_vcr_cassette "bug1"
+   it "should not raise an error when date is invalid" do
+      lambda { 
+        Movies.new("http://www.imdbapi.com/?t=Consinsual&y=2010").prepare.released.should be_nil 
+      }.should_not raise_error
+      a_request(:get, "http://www.imdbapi.com/?t=Consinsual&y=2010").should have_been_made.once
+    end
+  end
+  
   context "tomatoes" do
     use_vcr_cassette "tt0337978"
     

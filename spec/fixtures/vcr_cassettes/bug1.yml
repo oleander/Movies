@@ -1,0 +1,54 @@
+--- 
+- !ruby/struct:VCR::HTTPInteraction 
+  request: !ruby/struct:VCR::Request 
+    method: :get
+    uri: http://www.imdbapi.com:80/?t=Consinsual&y=2010
+    body: 
+    headers: 
+      accept: 
+      - "*/*; q=0.5, application/xml"
+      accept-encoding: 
+      - gzip, deflate
+      timeout: 
+      - "10"
+  response: !ruby/struct:VCR::Response 
+    status: !ruby/struct:VCR::ResponseStatus 
+      code: 200
+      message: OK
+    headers: 
+      cache-control: 
+      - no-cache
+      pragma: 
+      - no-cache
+      content-type: 
+      - text/html; charset=utf-8
+      content-encoding: 
+      - gzip
+      expires: 
+      - "-1"
+      vary: 
+      - Accept-Encoding
+      server: 
+      - Microsoft-IIS/7.0
+      x-aspnet-version: 
+      - 4.0.30319
+      x-powered-by: 
+      - ASP.NET
+      date: 
+      - Sat, 30 Apr 2011 03:37:31 GMT
+      content-length: 
+      - "469"
+    body: !binary |
+      H4sIAAAAAAAEAO29B2AcSZYlJi9tynt/SvVK1+B0oQiAYBMk2JBAEOzBiM3m
+      kuwdaUcjKasqgcplVmVdZhZAzO2dvPfee++999577733ujudTif33/8/XGZk
+      AWz2zkrayZ4hgKrIHz9+fB8/In7xR2+Ktsw/evTRSbVsimWzzsqPRh/9PnlW
+      02d7O7s79NerrM1n9Ocr/J6Xedbwny/uHtMHn+fLGu8/rbNFRn8/Lep82lZ4
+      /WW2LtOn4/Tb2XKZzem779ZFm0e/OcYrDX3ze+X5Mkuf5fXFuqmWo/R1kb3N
+      0i+ypsl+0boqRunvlbXz+nqZvsmuy6oepcdl/q5o0p8qJlVZNATqZVm1BOg4
+      nVbrVZmnV/MqbfJ80aRtlc6zyzwt2jQry3S1buY5fTrPi5pavEvL4jxHI/ok
+      zWcX+Th9Q781hNl1epG3TVosCf32qljmMwKbL9NsmVblLD0vs0U+Sid5W2fX
+      WTlKy3VDfSxn6Syf5tRdjhcZ7qqYtus6HwPRqqFPCVUh5Kv1si0WIOVuOq/T
+      e/fSBc0HvsjaYnmBz8f79OdPVm0OSu3doz/OntJvbbv7YGf//oMD+uBV3qxo
+      JgHmTb3OP/ol/w80fcQQ4gEAAA==
+
+    http_version: "1.1"
