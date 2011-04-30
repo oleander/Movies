@@ -37,6 +37,8 @@ class Movies
   
   def prepare
     tap do
+      return self unless content["Response"] == "True"
+      
       content.keys.each do |name| 
         instance_variable_set "@" + name.to_s.downcase, content[name] 
       end
