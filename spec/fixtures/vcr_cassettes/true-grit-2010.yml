@@ -2,7 +2,7 @@
 - !ruby/struct:VCR::HTTPInteraction 
   request: !ruby/struct:VCR::Request 
     method: :get
-    uri: http://www.imdbapi.com:80/?i=tt0337978&tomatoes=true
+    uri: http://www.imdbapi.com:80/?t=True%20Grit&y=201
     body: 
     headers: 
       accept: 
@@ -35,31 +35,28 @@
       x-powered-by: 
       - ASP.NET
       date: 
-      - Sat, 30 Apr 2011 02:37:33 GMT
+      - Sat, 30 Apr 2011 02:34:20 GMT
       content-length: 
-      - "643"
+      - "540"
     body: !binary |
       H4sIAAAAAAAEAO29B2AcSZYlJi9tynt/SvVK1+B0oQiAYBMk2JBAEOzBiM3m
       kuwdaUcjKasqgcplVmVdZhZAzO2dvPfee++999577733ujudTif33/8/XGZk
-      AWz2zkrayZ4hgKrIHz9+fB8/In7xR2+Ktsw/evTR8+IyT5/VeZ5Wdfq0yNNv
-      Z/Xso9FHv0+e1fT13s7OA/rrVdbmM/rz5efbu/fwd17mWcMf7T1Iv7Neptrw
-      83xZA+zxtC2q5Sg9qYtFPkrfzOuiLPOaWjwt6nzaVgD+PF+m3y2afJEt6Yvv
-      1kVLLR599EVWv02fVItJNn07Sv2/qBUBruqGWj2p19OcXi/LohkRCk1bLNPn
-      1fKCeisWVTu/Tr8sr1fzbNkCyMUFje0nCMDLsmrp9e9U82X6xfSkzJZ52mZv
-      8yatlmm2TM+WhMUyb7cnGGBKf9RVXTQt0eciWxY/yDCw9GpepUWTNtdNS+i3
-      xTQry+u0ma9bQuMinVVXy7Sd5+lXSxrULH3dEgGbMbqv6A2Mct62q0d37xbZ
-      eJHPimy7WMwm42m1uFsssou8ufvF3S9+8v6TF09/4t0XT093v3xzsf+C/v6i
-      vP8kWz5Z/t5vn7U/9WZ69cWbL37w5Zuf+MEXV7/n7zn+/X9yd/z7v/697+3t
-      jH96dUGdvVovW6I/9baXzusmPUgXxbLBF4Ty8oI+fzC+T3/+ZEXY0V+79+4f
-      7O3QB2dP6a+23bl378HDBwf0QVvRKKsvcsH9YM9+dAZs6aNpXrfFeUEsYb6x
-      fXw6dhBe5ZdFfsV9PXSfEv81c3z2qQP8qmrbfEkf3vuUPnuVN6tq2aCnN/U6
-      /+iX/D8kLc6swgIAAA==
+      AWz2zkrayZ4hgKrIHz9+fB8/In7xR2+Ktsw/evTRm3qdp5/XRfvR6KPfJ89q
+      +mhvZ3eH/nqVtfmM/nz5+fbuPfydl3nW8Ed7e+nTfJpqw8/zZQ1Qx7PLfNmu
+      63yUPq2zRTZKv5s3bV4vqc3Tos6nbQXwp+08W6YnVb4cpd+p8pJ/pSbfJSRy
+      NLAfjlLXlhocA0CDBvn5efqkLmYXeTNKv8jaNn2aLSpq/+2sKPM8fd3mxfI8
+      L2fooZlT26osAOJlWbUE4Dhtq/XFPP1q/HpM79fNPCvTeV6umjRLm3Y9mVT1
+      Mr2u1suL9KpaEAptnU3fprPqaknt6vQ8a+nHx026WNezvM7rMYBXGC2Bn7ft
+      6tHdu0U2XuSzItsuFrPJeFot7haLjFC++8XdL37y/pMvfvrs3YufPv7Bl09/
+      YufFLv1d3n+SLZ8sf++3z9qfejO9+vLp77P3xU9/cf3i+Pf8Pce//0/ujn//
+      17/3vb2d8U+vLqizV+tlWyxA9t10Xqf3d9JFsWzwRdYWywv6/GCMyfnJqs1B
+      s/u7n97bpb/PntIfbbu7v3Pv4NP79MGrvFlVywaQwAsf/ZL/BzMqslUcAgAA
 
     http_version: "1.1"
 - !ruby/struct:VCR::HTTPInteraction 
   request: !ruby/struct:VCR::Request 
     method: :get
-    uri: http://www.imdbapi.com:80/?i=tt0337978
+    uri: http://www.imdbapi.com:80/?t=True%20Grit&y=2010
     body: 
     headers: 
       accept: 
@@ -92,22 +89,21 @@
       x-powered-by: 
       - ASP.NET
       date: 
-      - Sat, 30 Apr 2011 02:37:33 GMT
+      - Sat, 30 Apr 2011 02:37:30 GMT
       content-length: 
-      - "583"
+      - "540"
     body: !binary |
       H4sIAAAAAAAEAO29B2AcSZYlJi9tynt/SvVK1+B0oQiAYBMk2JBAEOzBiM3m
       kuwdaUcjKasqgcplVmVdZhZAzO2dvPfee++999577733ujudTif33/8/XGZk
-      AWz2zkrayZ4hgKrIHz9+fB8/In7xR2+Ktsw/evTR8+IyT5/VeZ5Wdfq0yNNv
-      Z/Xso9FHv0+e1fT13s7OA/rrVdbmM/rz5efbu/fwd17mWcMf7T1Iv7Neptrw
-      83xZA+zxtC2q5Sg9qYtFPkrfzOuiLPOaWjwt6nzaVgD+PF+m3y2afJEt6Yvv
-      1kVLLR599EVWv02fVItJNn07Sv2/qBUBruqGWj2p19OcXi/LohkRCk1bLNPn
-      1fKCeisWVTu/Tr8sr1fzbNkCyMUFje0nCMDLsmrp9e9U82X6xfSkzJZ52mZv
-      8yatlmm2TM+WhMUyb7cnGGBKf9RVXTQt0eciWxY/yDCw9GpepUWTNtdNS+i3
-      xTQry+u0ma9bQuMinVVXy7Sd5+lXSxrULH3dEgGbMbqv6A2Mct62q0d37xbZ
-      eJHPimy7WMwm42m1uFsssou8ufvF3S9+8v6TF09/4t0XT093v3xzsf+C/v6i
-      vP8kWz5Z/t5vn7U/9WZ69cWbL37w5Zuf+MEXV7/n7zn+/X9yd/z7v/697+3t
-      jH96dUGdvVovW6I/9baXzusmPUgXxbLBF4Ty8oI+fzC+T3/+ZEXY0V+79+4f
-      7O3QB2dP6a+23bl378HDBwf0wau8WVXLBqDe1Ov8o1/y/wDvqZN0QgIAAA==
+      AWz2zkrayZ4hgKrIHz9+fB8/In7xR2+Ktsw/evTRm3qdp5/XRfvR6KPfJ89q
+      +mhvZ3eH/nqVtfmM/nz5+fbuPfydl3nW8Ed7e+nTfJpqw8/zZQ1Qx7PLfNmu
+      63yUPq2zRTZKv5s3bV4vqc3Tos6nbQXwp+08W6YnVb4cpd+p8pJ/pSbfJSRy
+      NLAfjlLXlhocA0CDBvn5efqkLmYXeTNKv8jaNn2aLSpq/+2sKPM8fd3mxfI8
+      L2fooZlT26osAOJlWbUE4Dhtq/XFPP1q/HpM79fNPCvTeV6umjRLm3Y9mVT1
+      Mr2u1suL9KpaEAptnU3fprPqaknt6vQ8a+nHx026WNezvM7rMYBXGC2Bn7ft
+      6tHdu0U2XuSzItsuFrPJeFot7haLjFC++8XdL37y/pMvfvrs3YufPv7Bl09/
+      YufFLv1d3n+SLZ8sf++3z9qfejO9+vLp77P3xU9/cf3i+Pf8Pce//0/ujn//
+      17/3vb2d8U+vLqizV+tlWyxA9t10Xqf3d9JFsWzwRdYWywv6/GCMyfnJqs1B
+      s/u7n97bpb/PntIfbbu7v3Pv4NP79MGrvFlVywaQwAsf/ZL/BzMqslUcAgAA
 
     http_version: "1.1"

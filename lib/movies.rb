@@ -26,12 +26,12 @@ class Movies
     Movies.new("http://www.imdbapi.com/?t=#{URI.encode(title)}", params).prepare
   end
   
-  def self.find_by_release_name(title, params)
+  def self.find_by_release_name(title, params = {})
     if title.nil? or title.empty?
       raise ArgumentError.new("Title can not be blank.")
     end
     
-    params.merge!(y: $1) if title =~ /(19|20\d{2})/
+    params.merge!(y: $1) if title =~ /((19|20)\d{2})/
     Movies.new("http://www.imdbapi.com/?t=#{URI.encode(Movies.cleaner(title))}", params).prepare
   end
   
@@ -93,7 +93,7 @@ class Movies
       string = string.gsub(/#{clean}/i, ' ')
     end
 
-    [/(19|20\d{2})/, /\./, /\s*-\s*/, /\s{2,}/].each do |regex|
+    [/((19|20)\d{2})/, /\./, /\s*-\s*/, /\s{2,}/].each do |regex|
       string = string.gsub(regex, ' ')
     end
 

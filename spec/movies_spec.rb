@@ -1,6 +1,6 @@
 require "spec_helper"
 
-describe "subject" do
+describe Movies do
   
   context "#find_by_id" do
     it "should raise an error if wrong params is being passed" do
@@ -18,6 +18,40 @@ describe "subject" do
         lambda { 
           Movies.find_by_title(title) 
         }.should raise_error(ArgumentError, "Title can not be blank.")
+      end
+    end
+  end
+  
+  context "#find_by_release_name" do
+    it "should raise an error if wrong params is being passed" do
+      [nil, ""].each do |title|
+        lambda { 
+          Movies.find_by_release_name(title) 
+        }.should raise_error(ArgumentError, "Title can not be blank.")
+      end
+    end
+    
+    context "true-grit-1969" do
+      use_vcr_cassette "true-grit-1969"
+      
+      it "should be possible to search for a release name containg a year" do
+        Movies.find_by_release_name("True.Grit.DVDRip.1969.XviD-AMIABLE").year.should eq(1969) 
+      end
+      
+      after(:each) do
+        a_request(:get, "http://www.imdbapi.com/?t=True%20Grit&y=1969").should have_been_made.once
+      end
+    end
+    
+    context "true-grit-2010" do
+      use_vcr_cassette "true-grit-2010"
+      
+      it "should be possible to search for a release name containg a year" do
+        Movies.find_by_release_name("True.Grit.DVDRip.2010.XviD-AMIABLE").year.should eq(2010) 
+      end
+      
+      after(:each) do
+        a_request(:get, "http://www.imdbapi.com/?t=True%20Grit&y=2010").should have_been_made.once
       end
     end
   end

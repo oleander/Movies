@@ -2,7 +2,7 @@
 - !ruby/struct:VCR::HTTPInteraction 
   request: !ruby/struct:VCR::Request 
     method: :get
-    uri: http://www.imdbapi.com:80/?i=1
+    uri: http://www.imdbapi.com:80/?t=True%20Grit%2069&y=19
     body: 
     headers: 
       accept: 
@@ -35,7 +35,63 @@
       x-powered-by: 
       - ASP.NET
       date: 
-      - Sat, 30 Apr 2011 00:15:40 GMT
+      - Sat, 30 Apr 2011 02:34:03 GMT
+      content-length: 
+      - "593"
+    body: !binary |
+      H4sIAAAAAAAEAO29B2AcSZYlJi9tynt/SvVK1+B0oQiAYBMk2JBAEOzBiM3m
+      kuwdaUcjKasqgcplVmVdZhZAzO2dvPfee++999577733ujudTif33/8/XGZk
+      AWz2zkrayZ4hgKrIHz9+fB8/In7xR2+Ktsw/evTRm3qdp5/XRfvR6KPfJ89q
+      +mj34acP6a9XWZvP6M/P8Xte5lnDf+7upt9ZL1Nt9Hm+rAHmeHaZL9t1nY/S
+      7+ZNm9fLUfq0zhYZtXla1Pm0rQD629T8Ov121s6zq+yavvsu9Zzjm5N5Vpd5
+      k76s6rZoRukXWX2xzvFt+qqa5HXbUOtjgGmo9Xeq+TL9bna9pP5+r2KRPs3q
+      yfUo/bzMl+lJtlhN8rIcpd/J63xxnb4uaST09suyaund43RWr5dvc8KQ+pxt
+      LysaWPrV+PUYnTbzrEyz5SzN0jf5u6xJX2XLi7xO53m5os+adj2ZVPUyva7W
+      y4v0qlpky7Sts+nbdFZdLalZnZ7T8PL64yZdrOsZoVCnxTI9W84KNM1rGlNV
+      X4+BUAVKEUrztl09unu3yMaLnJptF4vZZDytFneLRXaRN3e/uPvFT95/8sWb
+      3+fqxZvTey+e/j4/+BJ/l/efZMsny9/77bP2p95M6buv7n/xg99n54uf+D1/
+      z/Hv/5O749//9e99b29n/NOrC+rs1XrZFgvM1V46r5v0IF0USxCV5rlYXtDn
+      D8b36M+frNocJN7d+fT+Pv199pT+aNsd+nN371P64FXerKplA0hgno9+yf8D
+      jvB2lU0CAAA=
+
+    http_version: "1.1"
+- !ruby/struct:VCR::HTTPInteraction 
+  request: !ruby/struct:VCR::Request 
+    method: :get
+    uri: http://www.imdbapi.com:80/?t=True%20Grit%2069&y=196
+    body: 
+    headers: 
+      accept: 
+      - "*/*; q=0.5, application/xml"
+      accept-encoding: 
+      - gzip, deflate
+      timeout: 
+      - "10"
+  response: !ruby/struct:VCR::Response 
+    status: !ruby/struct:VCR::ResponseStatus 
+      code: 200
+      message: OK
+    headers: 
+      cache-control: 
+      - no-cache
+      pragma: 
+      - no-cache
+      content-type: 
+      - text/html; charset=utf-8
+      content-encoding: 
+      - gzip
+      expires: 
+      - "-1"
+      vary: 
+      - Accept-Encoding
+      server: 
+      - Microsoft-IIS/7.0
+      x-aspnet-version: 
+      - 4.0.30319
+      x-powered-by: 
+      - ASP.NET
+      date: 
+      - Sat, 30 Apr 2011 02:34:19 GMT
       content-length: 
       - "144"
     body: !binary |
@@ -48,7 +104,7 @@
 - !ruby/struct:VCR::HTTPInteraction 
   request: !ruby/struct:VCR::Request 
     method: :get
-    uri: http://www.imdbapi.com:80/?i=tt1285016%5B%5D
+    uri: http://www.imdbapi.com:80/?t=True%20Grit%2069&y=1969
     body: 
     headers: 
       accept: 
@@ -81,20 +137,30 @@
       x-powered-by: 
       - ASP.NET
       date: 
-      - Sat, 30 Apr 2011 00:22:55 GMT
+      - Sat, 30 Apr 2011 02:35:34 GMT
       content-length: 
-      - "144"
+      - "593"
     body: !binary |
       H4sIAAAAAAAEAO29B2AcSZYlJi9tynt/SvVK1+B0oQiAYBMk2JBAEOzBiM3m
       kuwdaUcjKasqgcplVmVdZhZAzO2dvPfee++999577733ujudTif33/8/XGZk
-      AWz2zkrayZ4hgKrIHz9+fB8/In7xR6/yZlUtm/yjRx+9zOomT0/ruqo/+iX/
-      D1RQWLAaAAAA
+      AWz2zkrayZ4hgKrIHz9+fB8/In7xR2+Ktsw/evTRm3qdp5/XRfvR6KPfJ89q
+      +mj34acP6a9XWZvP6M/P8Xte5lnDf+7upt9ZL1Nt9Hm+rAHmeHaZL9t1nY/S
+      7+ZNm9fLUfq0zhYZtXla1Pm0rQD629T8Ov121s6zq+yavvsu9Zzjm5N5Vpd5
+      k76s6rZoRukXWX2xzvFt+qqa5HXbUOtjgGmo9Xeq+TL9bna9pP5+r2KRPs3q
+      yfUo/bzMl+lJtlhN8rIcpd/J63xxnb4uaST09suyaund43RWr5dvc8KQ+pxt
+      LysaWPrV+PUYnTbzrEyz5SzN0jf5u6xJX2XLi7xO53m5os+adj2ZVPUyva7W
+      y4v0qlpky7Sts+nbdFZdLalZnZ7T8PL64yZdrOsZoVCnxTI9W84KNM1rGlNV
+      X4+BUAVKEUrztl09unu3yMaLnJptF4vZZDytFneLRXaRN3e/uPvFT95/8sWb
+      3+fqxZvTey+e/j4/+BJ/l/efZMsny9/77bP2p95M6buv7n/xg99n54uf+D1/
+      z/Hv/5O749//9e99b29n/NOrC+rs1XrZFgvM1V46r5v0IF0USxCV5rlYXtDn
+      D8b36M+frNocJN7d+fT+Pv199pT+aNsd+nN371P64FXerKplA0hgno9+yf8D
+      jvB2lU0CAAA=
 
     http_version: "1.1"
 - !ruby/struct:VCR::HTTPInteraction 
   request: !ruby/struct:VCR::Request 
     method: :get
-    uri: http://www.imdbapi.com:80/?i=tt0066026
+    uri: http://www.imdbapi.com:80/?t=True%20Grit&y=1969
     body: 
     headers: 
       accept: 
@@ -127,77 +193,23 @@
       x-powered-by: 
       - ASP.NET
       date: 
-      - Sat, 30 Apr 2011 00:26:08 GMT
+      - Sat, 30 Apr 2011 02:37:29 GMT
       content-length: 
-      - "571"
+      - "593"
     body: !binary |
       H4sIAAAAAAAEAO29B2AcSZYlJi9tynt/SvVK1+B0oQiAYBMk2JBAEOzBiM3m
       kuwdaUcjKasqgcplVmVdZhZAzO2dvPfee++999577733ujudTif33/8/XGZk
-      AWz2zkrayZ4hgKrIHz9+fB8/In7xR2+Ktsw/evTRF8evv/3R6KPfJ89q+mv3
-      4YMd+utV1uYz+vPl5/gjL/Os4b+/yOpUm3yeL2u8f1It8tn1KP1uVo/Sp3W2
-      yOjLp0WdT9sKEF9Vk7xu0+OyXWRL+uq7ddHm/EUxnWf1LP12Vb3N6d1XxfIi
-      fU6fLPM6/U49prbHgNFQ26fVMitn6et1O8/rMlvORulpWRZV26afV+uS/nxT
-      LdLXBIegt6P0dVaW1+nvlZdlXku3L8uqJUBv5nnatNn5eVqdp1n6e1V1ni2B
-      e3pe5NTDvGpWRZuV6brJ0/l6UdUp9ZbOi58ulm+btK3St3m+SgmNok6bbFm0
-      12mxxN/peTbNARW/z6u6plfpr6uMR/KyamTU87ZdPbp7t8jGRLYi2y4Ws8l4
-      Wi3uFovsIm/ufnH3i5+8/+SLnz5998XT0/sv3vzED17g7/L+k2z5ZPl7v33W
-      /tSb6dUXTy92vnjz+1x/8RO/5+85/v1/cnf8+7/+ve/t7Yx/enVBnb1aL9ti
-      gcnZTed1en8vXRTLBl9kLRGZPn8wfkB//mTV5qDu3sOHe7v099lT+qNtd3Y+
-      /XRn71P64FXerKplA0hv6nX+0S/5fwDW8LMaNwIAAA==
-
-    http_version: "1.1"
-- !ruby/struct:VCR::HTTPInteraction 
-  request: !ruby/struct:VCR::Request 
-    method: :get
-    uri: http://www.imdbapi.com:80/?i=tt1285016
-    body: 
-    headers: 
-      accept: 
-      - "*/*; q=0.5, application/xml"
-      accept-encoding: 
-      - gzip, deflate
-      timeout: 
-      - "10"
-  response: !ruby/struct:VCR::Response 
-    status: !ruby/struct:VCR::ResponseStatus 
-      code: 200
-      message: OK
-    headers: 
-      cache-control: 
-      - no-cache
-      pragma: 
-      - no-cache
-      content-type: 
-      - text/html; charset=utf-8
-      content-encoding: 
-      - gzip
-      expires: 
-      - "-1"
-      vary: 
-      - Accept-Encoding
-      server: 
-      - Microsoft-IIS/7.0
-      x-aspnet-version: 
-      - 4.0.30319
-      x-powered-by: 
-      - ASP.NET
-      date: 
-      - Sat, 30 Apr 2011 02:37:30 GMT
-      content-length: 
-      - "550"
-    body: !binary |
-      H4sIAAAAAAAEAO29B2AcSZYlJi9tynt/SvVK1+B0oQiAYBMk2JBAEOzBiM3m
-      kuwdaUcjKasqgcplVmVdZhZAzO2dvPfee++999577733ujudTif33/8/XGZk
-      AWz2zkrayZ4hgKrIHz9+fB8/In7xR2+Ktsw/evTRm3mevq6mRVamL/L2qqrf
-      fjT66PfJs5q+29vZ3aG/XmVtPqM/X36+vXsPf+dlnjX80W765bRNtd3n+bIG
-      yCdFdVFnq/n1KH1aZ4tslH67aNqqvqY2T4s6n9Lv1OxpdlnM0mfFcjrPa/rq
-      u3XR0i+PPjrO6mpJSNVvi+UofZIv0y/yH9TFdE6NjvFyQ42+kzdNnp4WTb6c
-      5PXFKD1ezur8Kv08q8+LvJyN0u+sm7ZYpm+KBTUos7f5KH1VVcv8Ov0iqzOC
-      9bKsWoJ0nE7n1GExLfO0Ok9bIsh5tV7OiuUF/n6WTfNJVb0d8TcNk2p7KaRC
-      k+/mk7QhzMeAWDUyhHnbrh7dvVtk40U+K7LtYjGbjKfV4m6xyC7y5u4Xd7/4
-      yftPvnjzxd6XT9/uvHh6fPXFM/q7vP8kWz5Z/t5vn7U/9WZ69eLNF7tfPJ3u
-      fXH1e/6e49//J3fHv//r3/ve3s74p1cX1Nmr9bItFiD4XjonmtAnGQ34gj44
-      GO/Snz9ZtTlItbvz8OBTTNzZU/qrbXf3Du7v7H5KH7zKm1W1bADjTb3OP/ol
-      /w9JJy5xGAIAAA==
+      AWz2zkrayZ4hgKrIHz9+fB8/In7xR2+Ktsw/evTRm3qdp5/XRfvR6KPfJ89q
+      +mj34acP6a9XWZvP6M/P8Xte5lnDf+7upt9ZL1Nt9Hm+rAHmeHaZL9t1nY/S
+      7+ZNm9fLUfq0zhYZtXla1Pm0rQD629T8Ov121s6zq+yavvsu9Zzjm5N5Vpd5
+      k76s6rZoRukXWX2xzvFt+qqa5HXbUOtjgGmo9Xeq+TL9bna9pP5+r2KRPs3q
+      yfUo/bzMl+lJtlhN8rIcpd/J63xxnb4uaST09suyaund43RWr5dvc8KQ+pxt
+      LysaWPrV+PUYnTbzrEyz5SzN0jf5u6xJX2XLi7xO53m5os+adj2ZVPUyva7W
+      y4v0qlpky7Sts+nbdFZdLalZnZ7T8PL64yZdrOsZoVCnxTI9W84KNM1rGlNV
+      X4+BUAVKEUrztl09unu3yMaLnJptF4vZZDytFneLRXaRN3e/uPvFT95/8sWb
+      3+fqxZvTey+e/j4/+BJ/l/efZMsny9/77bP2p95M6buv7n/xg99n54uf+D1/
+      z/Hv/5O749//9e99b29n/NOrC+rs1XrZFgvM1V46r5v0IF0USxCV5rlYXtDn
+      D8b36M+frNocJN7d+fT+Pv199pT+aNsd+nN371P64FXerKplA0hgno9+yf8D
+      jvB2lU0CAAA=
 
     http_version: "1.1"
