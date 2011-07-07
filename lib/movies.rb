@@ -34,6 +34,12 @@ class Movies
     Movies.new("http://www.imdbapi.com/?t=#{URI.encode(title)}", params).prepare
   end
   
+  def self.filter(string)
+    params = {}
+    params.merge!(y: $1) if string =~ /((19|20)\d{2})/
+    MovieFilter.new({title: Movies.cleaner(string)}.merge(params))
+  end
+  
   def self.find_by_release_name(title, params = {})
     if title.nil? or title.empty?
       raise ArgumentError.new("Title can not be blank.")

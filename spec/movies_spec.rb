@@ -198,4 +198,10 @@ describe Movies do
       }.should raise_error(ArgumentError, "You have to set 'tomatoes' to true to get this data.")
     end
   end
+  
+  context "#filter" do
+    it "should have a title" do
+      Movies.filter("True.Grit.DVDRip.1969.XviD-AMIABLE").title.should eq("True Grit")
+    end
+  end
 end

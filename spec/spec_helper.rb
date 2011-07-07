@@ -3,6 +3,7 @@ require "webmock/rspec"
 require "movies"
 require "vcr"
 require "uri"
+require "movies/filter"
 
 RSpec.configure do |config|
   config.mock_with :rspec
