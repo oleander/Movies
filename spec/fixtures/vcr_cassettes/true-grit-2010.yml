@@ -107,3 +107,57 @@
       s/u7n97bpb/PntIfbbu7v3Pv4NP79MGrvFlVywaQwAsf/ZL/BzMqslUcAgAA
 
     http_version: "1.1"
+- !ruby/struct:VCR::HTTPInteraction 
+  request: !ruby/struct:VCR::Request 
+    method: :get
+    uri: http://www.imdbapi.com:80/?t=True%20Grit&year=2010
+    body: 
+    headers: 
+      accept: 
+      - "*/*; q=0.5, application/xml"
+      accept-encoding: 
+      - gzip, deflate
+      timeout: 
+      - "3"
+  response: !ruby/struct:VCR::Response 
+    status: !ruby/struct:VCR::ResponseStatus 
+      code: 200
+      message: OK
+    headers: 
+      cache-control: 
+      - no-cache
+      pragma: 
+      - no-cache
+      content-type: 
+      - text/html; charset=utf-8
+      content-encoding: 
+      - gzip
+      expires: 
+      - "-1"
+      vary: 
+      - Accept-Encoding
+      server: 
+      - Microsoft-IIS/7.0
+      x-aspnet-version: 
+      - 4.0.30319
+      x-powered-by: 
+      - ASP.NET
+      date: 
+      - Thu, 07 Jul 2011 13:07:39 GMT
+      content-length: 
+      - "540"
+    body: !binary |
+      H4sIAAAAAAAEAO29B2AcSZYlJi9tynt/SvVK1+B0oQiAYBMk2JBAEOzBiM3m
+      kuwdaUcjKasqgcplVmVdZhZAzO2dvPfee++999577733ujudTif33/8/XGZk
+      AWz2zkrayZ4hgKrIHz9+fB8/In7xR2+Ktsw/evTRm3qdp5/XRfvR6KPfJ89q
+      +mhvZ3eH/nqVtfmM/nz5+fbuPfydl3nW8Ed7e+nTfJpqw8/zZQ1Qx7PLfNmu
+      63yUPq2zRTZKv5s3bV4vqc3Tos6nbQXwp+08W6YnVb4cpd+p8pJ/pSbfJSRy
+      NLAfjlLXlhocA0CDBvn5efqkLmYXeTNKv8jaNn2aLSpq/+2sKPM8fd3mxfI8
+      L2fooZlT26osAOJlWbUE4Dhtq/XFPP1q/HpM79fNPCvTeV6umjRLm3Y9mVT1
+      Mr2u1suL9KpaEAptnU3fprPqaknt6vQ8a+nHx026WNezvM7rMYBXGC2Bn7ft
+      6tHdu0U2XuSzItsuFrPJeFot7haLjFC++8XdL37y/pMvfvrs3YufPv7Bl09/
+      YufFLv1d3n+SLZ8sf++3z9qfejO9+vLp77P3xU9/cf3i+Pf8Pce//0/ujn//
+      17/3vb2d8U+vLqizV+tlWyxA9t10Xqf3d9JFsWzwRdYWywv6/GCMyfnJqs1B
+      s/u7n97bpb/PntIfbbu7v3Pv4NP79MGrvFlVywaQwAsf/ZL/BzMqslUcAgAA
+
+    http_version: "1.1"

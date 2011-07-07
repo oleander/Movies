@@ -15,7 +15,7 @@ class MovieFilter
   def to_param 
     params = {}
     if year
-      params.merge!(year: year.to_i)
+      params.merge!(y: year.to_i)
     end
     
     return params

@@ -10,7 +10,9 @@ describe MovieFilter do
   end
   
   it "should have able to convert filter to param" do
-    MovieFilter.new(title: "Title", year: 2011).to_param.should eq({year: 2011})
+    MovieFilter.new(title: "Title", year: 2011).to_param.should eq({
+      y: 2011
+    })
   end
   
   context "#cleaner" do
