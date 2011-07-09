@@ -2,6 +2,7 @@ require "json"
 require "rest-client"
 require "date"
 require "yaml"
+require "movies/filter"
 
 class Movies
   attr_reader :title, :year, :rated, :plot, :genres, :director, :writers, :actors, :poster, :runtime, :rating, :votes, :id
