@@ -20,7 +20,7 @@ excluded:
   - SCR
   - "((ac3(-[a-z]+)?))"
   - LIMITED
-  - (.+)?SUB
+  - (\w+)?SUB
   - NTSC
   - PAL
   - "S\d{1,2}E\d{1,2}"
