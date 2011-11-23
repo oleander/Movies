@@ -27,9 +27,8 @@ class MovieFilter
       string = string.gsub(regex, ' ')
     end
     
-    excluded.each do |clean|
-      string = string.gsub(/#{clean}.*$/i, ' ')
-    end
+    excluded["plain"].each { |clean| string.gsub!(/#{clean}.*$/i, ' ') }
+    excluded["groups"].each { |clean| string.gsub!(/#{clean}.*$/, ' ') }
     
     string.strip
   end

@@ -163,15 +163,21 @@ describe MovieFilter do
     it "should not contain 'R6'" do
       MovieFilter.new(title: "Just Go With It R6 LiNE XviD-Rx").title.should_not match(/r6/i)
     end
-    
-    it "should not remove the hole string" do
-      MovieFilter.new(title: "The Walking Dead S02E05 SWESUB HDTV XviD-SD.avi").title.should eq("The Walking Dead")
-    end
-    
+            
     it "should be able to parse the year" do
       MovieFilter.new(title: "Sex.And.The.City.2.2010.SUB.DVDRip.XviD.AC3-Rx").year.should eq(2010)
       MovieFilter.new(title: "VC Arcade 1942 Wii-LaKiTu").year.should eq(1942)
       MovieFilter.new(title: "VC Arcade 1942 Wii-LaKiTu", year: 1920).year.should eq(1920)
+    end
+    
+    describe "bugs" do
+      it "should not remove the hole string - 1" do
+        MovieFilter.new(title: "The Walking Dead S02E05 SWESUB HDTV XviD-SD.avi").title.should eq("The Walking Dead")
+      end
+      
+      it "should not remove the hole string - 2" do
+        MovieFilter.new(title: "Imagine.UK.S20E04.HDTV.XviD-BARGE").title.should eq("Imagine UK")
+      end
     end
   end
 end
