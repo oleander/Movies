@@ -163,6 +163,10 @@ describe MovieFilter do
     it "should not contain 'R6'" do
       MovieFilter.new(title: "Just Go With It R6 LiNE XviD-Rx").title.should_not match(/r6/i)
     end
+    
+    it "should not contain '10x20'" do
+      MovieFilter.new(title: "Just Go With It 10x20 LiNE XviD-Rx").title.should eq("Just Go With It")
+    end
             
     it "should be able to parse the year" do
       MovieFilter.new(title: "Sex.And.The.City.2.2010.SUB.DVDRip.XviD.AC3-Rx").year.should eq(2010)

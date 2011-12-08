@@ -22,7 +22,8 @@ excluded:
     - (\w+)?SUB
     - NTSC
     - PAL
-    - "S\d{1,2}E\d{1,2}"
+    - "s\d+e\d+"
+    - "\d+x\d+"
     - "R[4|5|6]"
   groups:
     - EXTENDED
