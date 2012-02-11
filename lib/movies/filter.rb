@@ -23,6 +23,7 @@ class MovieFilter
   
   def cleaner
     string = @title
+    string = extract_tags(string)
     [/((19|20)\d{2}).*$/, /\./, /\s*-\s*/, /\s{2,}/].each do |regex|
       string = string.gsub(regex, ' ')
     end
@@ -31,6 +32,17 @@ class MovieFilter
     excluded["groups"].each { |clean| string.gsub!(/#{clean}.*$/, ' ') }
     
     string.strip
+  end
+  
+  # remove usual tags in filenames like {720p}, (2011) or [KingdomRelease], and save it 
+  def extract_tags(string)
+    @tags = []
+    [ /\[([^\[]*)\]/ , /\{([^\{]*)\}/ , /\(([^\(]*)\)/ ].each do |regex|
+      while(matched = string.match(regex)) do
+        @tags << matched[1]
+        string.gsub!(matched[0])
+      end
+    end
   end
   
   private
